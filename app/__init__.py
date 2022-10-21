@@ -9,7 +9,7 @@ This module:
 from flask import Flask
 
 # Import extensions
-from .extensions import bcrypt, cors, db, jwt, ma
+from .extensions import bcrypt, cors, db, jwt, ma, admin, ModelView
 
 # Import config
 from config import config_by_name
@@ -24,11 +24,22 @@ def create_app(config_name):
     # Register blueprints
     from .auth import auth_bp
 
-    app.register_blueprint(auth_bp)
+    app.register_blueprint(auth_bp, url_prefix="/auth")
 
     from .api import api_bp
-
-    app.register_blueprint(api_bp, url_prefix="/api")
+    app.register_blueprint(api_bp, url_prefix="/api", )
+    
+    from .app_blueprint import app_blueprint
+    app.register_blueprint(app_blueprint)
+    
+    
+    
+    admin.name='boilerplate'
+    admin.template_mode='bootstrap4'
+    from app.models.user import User, Role
+    
+    admin.add_view(ModelView(User, db.session))
+    admin.add_view(ModelView(Role, db.session))
 
     return app
 
@@ -40,3 +51,4 @@ def register_extensions(app):
     jwt.init_app(app)
     bcrypt.init_app(app)
     cors.init_app(app)
+    admin.init_app(app)
