@@ -60,13 +60,13 @@ It uses [Black](https://github.com/psf/black) for code styling/formatting.
 
 ## Notes
 
-By default the `/` route is used by the `auth` blueprint.
+By default the `/auth` route is used by the `auth` blueprint.
 
 The rest of the resources are found in `/api` (This is the docs route by default, this can be changed easily).
 
 **Note**: Pipenv seems to have been becoming unmaintained or unsupported, so `virtualenv` is recommended to manage your packages and Python environment, hence why `requirements.txt` has been generated.
 
-## Installing with Pipenv
+## Installing with Pipenv ???????
 ```sh
 # Clone the repo
 $ git clone https://github.com/X1Zeth2X/flask-restx-boilerplate.git
@@ -98,7 +98,8 @@ $ pipenv shell
 
 # (Optional for development, recommended)
 $ flask db init # Initializes a new SQLite database.
-$ flask db migrate # Creates the tables in the database.
+$ flask db migrate # Creates the changes for the database.
+$ flask db upgrade # Apply the changes to the database.
 
 # Run the app
 $ flask run
