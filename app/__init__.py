@@ -29,11 +29,12 @@ def create_app(config_name):
     from .api import api_bp
     app.register_blueprint(api_bp, url_prefix="/api", )
     
+    from .pwa_blueprint import pwa_blueprint
+    app.register_blueprint(pwa_blueprint, url_prefix="/pwa")
+    
     from .app_blueprint import app_blueprint
     app.register_blueprint(app_blueprint)
-    
-    
-    
+     
     admin.name='boilerplate'
     admin.template_mode='bootstrap4'
     from app.models.user import User, Role
