@@ -1,4 +1,4 @@
-# Giya
+# Utcapp
 
 An awesome REST boilerplate that uses Flask-RESTX (formerly Flask-RESTPlus).
 It has the usual API features to get you started and off the ground,
@@ -30,7 +30,7 @@ Usage: flask [OPTIONS] COMMAND [ARGS]...
   wsgi.py file. Setting the FLASK_ENV environment variable to 'development'
   will enable debug mode.
 
-    $ export FLASK_APP=giya.py
+    $ export FLASK_APP=utcapp.py
     $ export FLASK_ENV=development
     $ flask run
 
@@ -86,13 +86,13 @@ Please specify your app's environment variables in a `.env` file, otherwise Flas
 
 ```sh
 # .env file example
-export FLASK_APP=giya
+export FLASK_APP=utcapp
 
 # configs: production, testing, development, and default (uses DevelopmentConfig)
 export FLASK_CONFIG=development
 
 # Another way of assigning environment variables is:
-FLASK_APP=giya
+FLASK_APP=utcapp
 FLASK_CONFIG=development
 
 # Read more at https://github.com/theskumar/python-dotenv
@@ -114,17 +114,17 @@ $ flask run
 Or windows
 
 ```bat
-$ py -m flask db init --app giya # Initializes a new SQLite database.
-$ py -m flask db migrate --app giya # Creates the changes for the database.
-$ py -m flask db upgrade --app giya # Apply the changes to the database.
+$ py -m flask db init --app utcapp # Initializes a new SQLite database.
+$ py -m flask db migrate --app utcapp # Creates the changes for the database.
+$ py -m flask db upgrade --app utcapp # Apply the changes to the database.
 
 # Run the app
-$ flask run --app giya
+$ flask run --app utcapp
 ```
 
 
 ## Unit testing
-Giya has already some unit tests written, we encourage adding more unit tests as you scale.
+Utcapp has already some unit tests written, we encourage adding more unit tests as you scale.
 
 ```sh
 # Unit testing
